@@ -42,7 +42,7 @@ stages {
         steps {
             script {
                 if (params.env == 'UAT') {
-                    echo 'Deploying to UAT'
+                    sh 'monaco deploy --environment UAT --dynatrace-url $DT_URL --dynatrace-api-token $DT_API_TOKEN'
                 } else if (params.env == 'PROD') {
                     echo 'Deploying to PROD'
                 }
